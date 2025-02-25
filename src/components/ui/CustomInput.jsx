@@ -8,7 +8,7 @@ const CustomInput = ({
   onChange,
   value,
   required,
-  type
+  type,
 }) => {
   return (
     <Box width={"100%"}>
@@ -25,18 +25,18 @@ const CustomInput = ({
           mb: 2,
           "& .MuiOutlinedInput-root": {
             borderRadius: "40px",
-            ".MuiOutlinedInput-notchedOutline":{
-              borderColor:'black'
+            ".MuiOutlinedInput-notchedOutline": {
+              borderColor: "black",
             },
-            
+
             "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-              borderColor: "black", 
+              borderColor: "black",
             },
           },
           "& .MuiOutlinedInput-input": {
-            "::placeholder":{fontSize:'16px'},
+            "::placeholder": { fontSize: "16px" },
             fontSize: { xs: "12px", sm: "14px" },
-            padding:'.5rem 1rem'
+            padding: ".5rem 1rem",
           },
         }}
         onChange={onChange}

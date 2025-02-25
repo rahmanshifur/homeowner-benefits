@@ -1,10 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   step: 0,
-  completedSteps:[0],
-  loading:false,
-  success:false,
+  loading: false,
+  success: false,
   formData: {
     homeowner: "",
     electricityBill: "",
@@ -20,7 +19,7 @@ const initialState = {
 };
 
 const formSlice = createSlice({
-  name: 'form',
+  name: "form",
   initialState,
   reducers: {
     updateFormData: (state, action) => {
@@ -32,9 +31,9 @@ const formSlice = createSlice({
     prevStep: (state) => {
       if (state.step > 0) state.step -= 1;
     },
-    // resetStep: (state) => state.step=initialState.step,
   },
 });
 
-export const { updateFormData, nextStep, prevStep, resetStep } = formSlice.actions;
+export const { updateFormData, nextStep, prevStep, resetStep } =
+  formSlice.actions;
 export default formSlice.reducer;

@@ -22,10 +22,10 @@ const StepFive = ({ formData }) => {
       setTimeout(() => {
         setLoading(false);
         setSuccess(true);
-          setTimeout(() => {
-            navigate("/thank-you");
-        }, 600); 
-      }, 1000); 
+        setTimeout(() => {
+          navigate("/thank-you");
+        }, 600);
+      }, 1000);
     }
   };
 
@@ -39,13 +39,13 @@ const StepFive = ({ formData }) => {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(255, 255, 255, 0.7)", 
+            backgroundColor: "rgba(255, 255, 255, 0.7)",
             zIndex: 10,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             transition: "opacity 0.3s ease-in-out",
-            backdropFilter: "blur(1px)", 
+            backdropFilter: "blur(1px)",
           }}
         />
       )}
@@ -54,6 +54,7 @@ const StepFive = ({ formData }) => {
         <Box>
           <Heading text="Contact *" size="large" />
           <CustomInput
+            type={"number"}
             required
             placeholder="Phone Number"
             value={contact}
@@ -62,20 +63,34 @@ const StepFive = ({ formData }) => {
         </Box>
         <Box>
           <Heading text="Preferred time of calling? *" size="large" />
-          <RadioGroup value={callTime} onChange={(e) => setCallTime(e.target.value)}>
+          <RadioGroup
+            value={callTime}
+            onChange={(e) => setCallTime(e.target.value)}
+          >
             <CustomRadio value="9 AM - 11 AM" label="9 AM - 11 AM" />
             <CustomRadio value="6 PM - 8 PM" label="6 PM - 8 PM" />
-            <CustomRadio value="I’m available to pick anytime" label="I’m available to pick anytime" />
+            <CustomRadio
+              value="I’m available to pick anytime"
+              label="I’m available to pick anytime"
+            />
           </RadioGroup>
         </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", mt: 3, mb: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            mt: 3,
+            mb: 2,
+          }}
+        >
           <PrimaryBtn text="Submit" type="submit" disabled={loading} />
         </Box>
         {success && (
-        <Typography color="green" sx={{ mt: 2 }}>
-         Form Successfully submitted! 
-        </Typography>
-      )}
+          <Typography color="green" sx={{ mt: 2 }}>
+            Form Successfully submitted!
+          </Typography>
+        )}
       </form>
     </Box>
   );

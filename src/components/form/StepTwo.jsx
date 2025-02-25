@@ -15,8 +15,8 @@ const StepTwo = ({ onNext, onBack, onUpdate, formData }) => {
         <CustomRadio value={'yes'} label="Yes" />
         <CustomRadio value={'no'} label="No" />
       </RadioGroup>
-      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3, mb:2 }}>
-        <PrimaryBtn text={'Back'} onClick={()=>{ onBack()}} smButton />
+      <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", mt: 3, mb: 2 }}>
+        <PrimaryBtn text={'Back'} onClick={() => { onBack() }} smButton />
         <PrimaryBtn text={'Next'} onClick={() => {
           if (!isButtonDisabled) {
             onUpdate({ electricityBill: value });
